@@ -4,21 +4,36 @@ admin.initializeApp(functions.config().firebase);
 
 exports.sendNotification = functions.https.onRequest((req, res) => {
     const to = req.query.to;
+    const fromId = req.query.fromId;
+    const fromPushId = req.query.fromPushId;
+    const fromName = req.query.fromName;
+    const type = req.query.type;
     const title = req.query.title;
     const body = req.query.body;
 
     var payload;
-    if (body != undefined && body !== '') {
-        payload = {
-            notification: {
-                title: title,
-                body: body
-            }
-        };
+    if (to === 'all') {
+        if (body != undefined && body !== '') {
+            payload = {
+                notification: {
+                    title: title,
+                    body: body
+                }
+            };
+        } else {
+            payload = {
+                notification: {
+                    title: title
+                }
+            };
+        }
     } else {
         payload = {
-            notification: {
-                title: title
+            data: {
+                fromId: fromId,
+                fromPushId: fromPushId,
+                fromName: fromName,
+                type: type
             }
         };
     }
@@ -27,6 +42,7 @@ exports.sendNotification = functions.https.onRequest((req, res) => {
         priority: "high",
         timeToLive: 60 * 60 * 24
     };
+
     if (to === 'all') {
         admin.messaging().sendToTopic(to, payload, options)
             .then(function (response) {

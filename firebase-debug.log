@@ -1,0 +1,58 @@
+[debug] [2018-04-07T15:17:00.733Z] ----------------------------------------------------------------------
+[debug] [2018-04-07T15:17:00.736Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Igor Klimov\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy --only functions
+[debug] [2018-04-07T15:17:00.737Z] CLI Version:   3.18.2
+[debug] [2018-04-07T15:17:00.737Z] Platform:      win32
+[debug] [2018-04-07T15:17:00.737Z] Node Version:  v8.10.0
+[debug] [2018-04-07T15:17:00.737Z] Time:          Sat Apr 07 2018 18:17:00 GMT+0300 (FLE Daylight Time)
+[debug] [2018-04-07T15:17:00.737Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-07T15:17:00.748Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-07T15:17:00.749Z] > authorizing via signed-in user
+[debug] [2018-04-07T15:17:00.751Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-07T15:17:00.751Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/9wrDtPFQ4N_V1D0n04naAQnlfeZZ8uUgMGPzuov-QyM',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Apr 07 2018 18:17:00 GMT+0300 (FLE Daylight Time)
+[debug] [2018-04-07T15:17:00.945Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-07T15:17:00.953Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tictactoe-64902  
+  
+ Sat Apr 07 2018 18:17:00 GMT+0300 (FLE Daylight Time)
+[debug] [2018-04-07T15:17:02.081Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-07T15:17:02.082Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tictactoe-64902/tokens  
+  
+ Sat Apr 07 2018 18:17:02 GMT+0300 (FLE Daylight Time)
+[debug] [2018-04-07T15:17:02.759Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'tictactoe-64902'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-07T15:17:05.246Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.12.0",
+    "firebase-functions": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-promise": "^3.6.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-07T15:17:05.247Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/tictactoe-64902?view=CONSUMER_VIEW  
+  
+ Sat Apr 07 2018 18:17:05 GMT+0300 (FLE Daylight Time)
+[debug] [2018-04-07T15:17:05.247Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/tictactoe-64902?view=CONSUMER_VIEW  
+  
+ Sat Apr 07 2018 18:17:05 GMT+0300 (FLE Daylight Time)
